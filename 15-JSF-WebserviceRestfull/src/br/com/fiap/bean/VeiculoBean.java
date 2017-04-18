@@ -30,7 +30,7 @@ public class VeiculoBean {
 	}
 	
 	//Método para o clique do botão da tela
-	public void cadastrar(){
+	public String cadastrar(){
 		try {
 			rep.cadastrar(veiculo);			
 			System.out.println("Cadastrado");
@@ -39,7 +39,10 @@ public class VeiculoBean {
 			FacesContext.getCurrentInstance().addMessage(null, msg);
 		} catch (Exception e) {
 			e.printStackTrace();
+			return "cadastro-veiculo";
 		}
+		return "lista-veiculo";
+		
 	}
 
 	public VeiculoTO getVeiculo() {

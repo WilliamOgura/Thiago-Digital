@@ -4,12 +4,12 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"> 
 
-<h:head>
-	<h:outputStylesheet library="css" name="bootstrap.min.css"/>
-</h:head> 
-<body> 
+<ui:composition template="_template.xhtml">
+	<ui:define name="conteudo">
+
 <div class="container">
 	<h1>Veículos na promoção</h1>
+	<div class="form-group">
 	<h:dataTable styleClass="table" value="#{listaVeiculoBean.lista}" var="v">
 		<h:column>
 			<f:facet name="header">Código</f:facet>
@@ -28,8 +28,11 @@
 			#{v.preco}
 		</h:column>
 	</h:dataTable>
+	</div>
+	<h:link outcome="cadastro-veiculo">Cadastrar Novo Veículo</h:link>
 </div>
-</body> 
+</ui:define>
+</ui:composition>
 </html>
 
 
